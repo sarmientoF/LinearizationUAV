@@ -4,7 +4,7 @@
 
 ###### Non-linear System
 
-<img src="https://latex.codecogs.com/gif.latex?\begin{equation}
+<img src="https://latex.codecogs.com/gif.latex?
   \left[\begin{array}{l}
       \dot{\varepsilon} \\
       \dot{\eta}
@@ -12,9 +12,7 @@
       (\eta I-\varepsilon \times) \\
       -\varepsilon^{T}
     \end{array}\right] \omega=: \frac{1}{2} J_{E} \omega
-\end{equation}
-" /> 
-
+" />
 
 -   A google workspace user is able to share files or folders with any email holders for a period of time not longer than a year.
 
@@ -60,7 +58,7 @@
 
 4. Open the file `form.html` and update this file with your `API_KEY` 🔑
     ```js
-    var DEVELOPER_KEY = 'YOUR_API_KEY'
+    var DEVELOPER_KEY = "YOUR_API_KEY";
     ```
 5. Login to clasp and create a newGAS project, select webapp
     ```sh
