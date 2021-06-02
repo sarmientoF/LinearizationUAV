@@ -15,9 +15,12 @@
 | ![](img/eta_val.png) | ![](img/gamma_val.png) |
 
 ## Run this code
- - run `init.m`
- - run `NewGenerateTrainingInput.m`
+
+-   run `init.m` only once
+-   run `NewGenerateTrainingInput.m`
+
 ## Code Flow
+
 1. NewGenerateTrainingInput
 2. NewSysIdentification
 3. NewModelValidation
