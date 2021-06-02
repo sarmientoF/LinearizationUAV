@@ -2,27 +2,11 @@
 
 ## Overview
 
-###### Non-linear System
+Non-linear System             |  Linear System
+:-------------------------:|:-------------------------:
+![](img/eq_expanded.png) |  ![](img/eq_lin.png)
 
-<img src="https://latex.codecogs.com/gif.latex?
-  \left[\begin{array}{l}
-      \dot{\varepsilon} \\
-      \dot{\eta}
-    \end{array}\right]=\frac{1}{2}\left[\begin{array}{c}
-      (\eta I-\varepsilon \times) \\
-      -\varepsilon^{T}
-    \end{array}\right] \omega=: \frac{1}{2} J_{E} \omega
-" />
 
--   A google workspace user is able to share files or folders with any email holders for a period of time not longer than a year.
-
--   When sharing multiple files, a zip file, that contains the multiple files selected, will be created and shared
-
--   The shared file permission will be revoked automatically when the specified date comes
-
--   Non-google users can be access to the shared file(s)
-
--   The first time of use, it will create a new Spreadsheet in your google drive root with the name `google-visitor-manger`. Also, every time you share a file(s), it will keep track of your shared file(s) by adding a new row to the `google-visitor-manger` file
 
 ## [Requirements](https://developers.google.com/apps-script/guides/typescript)
 
