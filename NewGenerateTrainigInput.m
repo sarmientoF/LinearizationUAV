@@ -1,11 +1,9 @@
 clc, clear, close all;
-% return 
+% Create the 3 sets of training data
 %% Training Input
-addpath("Functions")
-return 
 % Randn Normally distributed pseudorandom numbers.
 N = 3E4;
-params = NewParameters(5 , 5);
+params = NewParameters();
 
 trainigPath = params.trainigPath;
 w1 = randn(N,4);
@@ -31,7 +29,7 @@ for i = 1:3
 
     simin.w=[simin.t',w];
 
-    params.setInitialStates(angles(i), angles(i));
+    params.setInitialStates(angles(i));
     
     out = sim('NewTrainingData.slx');
     

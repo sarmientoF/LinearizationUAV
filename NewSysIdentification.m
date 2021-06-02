@@ -97,5 +97,4 @@ B = [B_u;
 Rank_control = rank(ctrb(A,B));
 
 NewModelValidation
-% NewModelValidation
-% NewModelValidation
+

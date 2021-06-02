@@ -32,14 +32,13 @@ classdef NewParameters < handle
     
     methods
         % CONSTRUCTOR   
-        function this = NewParameters(alpha, beta)
-            if nargin < 2
-                alpha = 0;
-                beta = 0;
+        function this = NewParameters(phi)
+            if nargin < 1
+                phi = 0;
             end
             
             this.setPaths()
-            this.setInitialStates(alpha, beta)
+            this.setInitialStates(phi)
             this.setSimulationSettings()
             this.setDim()
             [this.eta_0,this.gamma_0] = NewEtaGammaIni(this.T_0,this.epsilon_0,this.eta_e0, this.omega_0,this.d);
@@ -52,13 +51,12 @@ classdef NewParameters < handle
             this.testPath = "Data/Test/";
         end
 
-        function setInitialStates(this, alpha, beta)
+        function setInitialStates(this, phi)
             this.p_0 = 0*[0;0.5;0]; %Position
             this.v_0 = 0*[0.5;0;0.2]; %Velocity
 
-            % phi = 5;
-            this.epsilon_0 = [0;0;sind(alpha)]; %Euler parametes
-            this.eta_e0 = cosd(alpha); %Euler parametes(angle of rotation)
+            this.epsilon_0 = [0;0;sind(phi)]; %Euler parametes
+            this.eta_e0 = cosd(phi); %Euler parametes(angle of rotation)
             this.omega_0 = [0; 0; 0];
             this.T_0 = 9.81; %Total Thrust
             this.d = 0; %Shift origin
