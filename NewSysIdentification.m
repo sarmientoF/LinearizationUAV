@@ -1,8 +1,11 @@
 clear, clc, close all
 %% Load Parameters
+fprintf("🚨 Starting System Identification\n")
+
 params = NewParameters;
 maxStepSize=params.maxStepSize;
 
+fprintf("🚨 Loading Data\n")
 outputUAV1 = load(params.trainigPath + "OutputUAV1");
 [x1, w1, eta1, gamma1, d_eta1, d_gamma1] = deal(outputUAV1.x, outputUAV1.w, outputUAV1.eta, outputUAV1.gamma, outputUAV1.d_eta, outputUAV1.d_gamma);
 
@@ -23,6 +26,8 @@ xi = [x;eta;gamma;w]; % Put all the concatenated states and input together
 
 %% Define Regression Matrix
 %Initialize the expectation
+fprintf("🚨 Regression Matrix\n")
+
 E1 = zeros(params.dim_eta+params.dim_gamma,params.dim_xi);
 E2 = zeros(params.dim_xi,params.dim_xi);
 

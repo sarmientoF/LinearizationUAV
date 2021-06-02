@@ -6,6 +6,8 @@ N = 3E4;
 params = NewParameters();
 
 trainigPath = params.trainigPath;
+fprintf("🚀 Start Generating InputUAV data\n")
+
 w1 = randn(N,4);
 save(trainigPath + 'InputUAV1','w1');
 
@@ -15,12 +17,15 @@ save(trainigPath + 'InputUAV2','w2');
 w3 = randn(N,4);
 
 save(trainigPath + 'InputUAV3','w3');   
+fprintf("✅ Done Generating InputUAV data\n")
 
 
 
 angles = [5 15 35];
 
 for i = 1:3
+    fprintf("🚀 Generating OutputUAV" + i + "data\n")
+    
     inputUAV = load(params.trainigPath + "InputUAV" + i);
     w = getfield(inputUAV, "w" + i);
 
@@ -41,6 +46,8 @@ for i = 1:3
     d_gamma = out.d_gamma';
     
     save(params.trainigPath +'OutputUAV' + i,'x', 'w', 'eta', 'gamma', 'd_eta', 'd_gamma');
+
+    fprintf("✅ Done OutputUAV" + i + "data\n")
 
 end
 
