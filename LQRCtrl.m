@@ -1,4 +1,5 @@
 %% Inital Condition
+
 th_0 = 10;
 params = Parameters(th_0);
 maxW = 30;
