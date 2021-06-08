@@ -21,7 +21,20 @@
 
 ## Code Flow
 
-1. NewGenerateTrainingInput
-2. NewSysIdentification
-3. NewModelValidation
-4. plot_validation
+-   Linearization: `main1.m`
+    1. GenerateTrainingInput
+    2. SysIdentification
+    3. ModelValidation
+    4. plot_validation
+-   LQR Controller Design: `main2.m`
+    1. GenerateTrainingInput
+    2. SysIdentification
+    3. LQRController
+
+## Results:
+
+-   Linearization:
+    ![](img/Linear.png)
+
+-   LQR Controller:
+    ![](img/LQR.png)
