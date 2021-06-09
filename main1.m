@@ -1,4 +1,4 @@
-GenerateTrainigInput;
+% GenerateTrainigInput;
 
 SystemIdentification;
 

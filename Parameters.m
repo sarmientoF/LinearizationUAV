@@ -59,7 +59,7 @@ classdef Parameters < handle
             this.epsilon_0 = [0;0;sind(phi)]; %Euler parametes
             this.eta_e0 = cosd(phi); %Euler parametes(angle of rotation)
             this.euler_0 = [this.epsilon_0; this.eta_e0];
-            this.omega_0 = [0; 0; 0];
+            this.omega_0 = 0 * [1; 1; 1];
             this.T_0 = 9.81; %Total Thrust
             this.d = 0; %Shift origin
 
