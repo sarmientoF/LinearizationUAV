@@ -1,8 +1,9 @@
-% GenerateTrainigInput;
+% GenerateTrainigInput; %% Keep comented not to modify the Data folder
 
-SystemIdentification;
+SystemIdentification; %% Generated A, B Matrixes
 
-%% Controller or Model Validation
-if(Rank_control == 38)
-    LQRCtrl;
-end
+% %% Controller or Model Validation
+
+% if(Rank_control == 38)
+%     LQRCtrl;
+% end

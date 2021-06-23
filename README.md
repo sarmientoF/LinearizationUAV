@@ -14,10 +14,10 @@
 | :------------------: | :--------------------: |
 | ![](img/eta_val.png) | ![](img/gamma_val.png) |
 
-## Run this code
+## To Run this code
 
--   run `init.m` only once
--   run `NewGenerateTrainingInput.m`
+-   run `init.m` at the beginning
+-   Modify `Parameters.m` to change initial conditions
 
 ## Code Flow
 
@@ -30,6 +30,13 @@
     1. GenerateTrainingInput
     2. SysIdentification
     3. LQRController
+
+## Folder Structure
+
+-   Linearization: Code to generate linearized model
+-   Sim: Simulink files
+-   Controller: LQR and Servo Cotroller
+-   Data: Best Model data
 
 ## Results:
 
