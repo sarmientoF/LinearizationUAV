@@ -1,4 +1,4 @@
-clc, clear, close all;
+clear, close all;
 %% Create the 3 sets of training data
 %  1. Training Input
 % Randn Normally distributed pseudorandom numbers.

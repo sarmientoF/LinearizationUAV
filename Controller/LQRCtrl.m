@@ -17,7 +17,7 @@ C_z = [eye(13,13),zeros(13,25)];
 K = lqr(A,B,C_z'*Q_dfl*C_z,R);
 
 
-return
+% return
 t_final = 40;
 
 %% Target State

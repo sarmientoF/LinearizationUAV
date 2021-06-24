@@ -1,0 +1,24 @@
+\frametitle{}
+\frametitle{LQR in Matlab}
+
+    \begin{center}
+        \begin{minipage}{1\textwidth}
+            \begin{minted}[mathescape,
+          gobble=2,
+        %   linenos,
+          fontsize=\large,
+          framesep=2mm]{matlab}
+          %% Controller Settings
+          Q_x = 2.3e3*[1;1;1];
+          Q_v = 1e3*[5;5;5];
+          Q_e = .5e3*[1;1;1;2];
+          Q_omega =200 * [10;10;10];
+          Q_dfl = diag([Q_x;Q_v;Q_e;Q_omega]);
+
+          R = 1000 * diag([1;1;1;1]);
+          C_z = [eye(13,13),zeros(13,25)];
+          K = lqr(A,B,C_z'*Q_dfl*C_z,R);
+        \end{minted}
+        \end{minipage}
+    \end{center}
+

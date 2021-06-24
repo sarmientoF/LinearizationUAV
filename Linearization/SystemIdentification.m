@@ -101,5 +101,17 @@ B = [B_u;
 Rank_control = rank(ctrb(A,B));
 fprintf("🕹 Rank Control: " +  Rank_control+ "\n")
 
+C =[eye(3), zeros(3, 35); 
+    zeros(1, 9), 1, zeros(1, 28)]; 
+
+D = zeros(4);
+S = [A, B; C, D];
+
+Co = rank(ctrb(A,B));
+Ob = rank(obsv(A,C));
+detS = det(S);
+fprintf("🕹 Rank Ctrb: " +  Co + "\n")
+fprintf("🕹 Rank Obsv: " +  Ob + "\n")
+fprintf("🚨 Determint: " +  detS + "\n")
 
 

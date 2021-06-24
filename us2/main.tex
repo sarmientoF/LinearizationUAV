@@ -1,0 +1,114 @@
+\documentclass{beamer}
+
+\usepackage{beamerthemesplit}
+% \usepackage[orientation=landscape,size=custom,width=16,height=11,scale=0.4,debug]{beamerposter} 
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{ulem}
+
+\usepackage{minted}
+\usemintedstyle{borland}
+
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{graphicx} %Loading the package
+\graphicspath{{../img/}} %Setting the path
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+%------------------------------------------------------------
+%This block of code defines the information to appear in the
+%Title page
+\title[Progress Report] %optional
+{Progress Report}
+
+\subtitle{Lifting Linearization of a UAV}
+
+\author[Sarmiento Fernando] % (optional)
+{Sarmiento Diaz Fernando Gabriel}
+
+\institute[TITECH] % (optional)
+{
+  \inst{1}%
+  Yamakita Laboratory\\
+  Department of Systems and Control Engineering\\
+  Tokyo Institute of Technology
+}
+
+\date[2021] % (optional)
+\today
+% {Very Large Conference, April 2021}
+
+% \logo{\includegraphics[height=1cm]{overleaf-logo}}
+
+%End of title page configuration block
+%------------------------------------------------------------
+
+
+
+%------------------------------------------------------------
+%The next block of commands puts the table of contents at the 
+%beginning of each section and highlights the current section:
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+%------------------------------------------------------------
+
+
+\begin{document}
+
+%The next statement creates the title page.
+\frame{\titlepage}
+
+
+%---------------------------------------------------------
+%This block of code is for the table of contents after
+%the title page
+\begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents
+\end{frame}
+%---------------------------------------------------------
+
+\section{Linear Models for Regression}
+\subsection{The Evidence Approximation}
+\begin{frame}
+    \frametitle{The Evidence Approximation(1)}
+    The fully Bayesian predictive distribution is given
+    \begin{equation}
+        p(t \mid \mathbf{t})=\iiint p(t \mid \mathbf{w}, \beta) p(\mathbf{w} \mid \mathbf{t}, \alpha, \beta) p(\alpha, \beta \mid \mathbf{t}) \mathrm{d} \mathbf{w} \mathrm{d} \alpha \mathrm{d} \beta
+    \end{equation}
+    but this integral is intractable. Approximate with
+    \begin{equation}
+        p(t \mid \mathbf{t}) \simeq p(t \mid \mathbf{t}, \widehat{\alpha}, \widehat{\beta})=\int p(t \mid \mathbf{w}, \widehat{\beta}) p(\mathbf{w} \mid \mathbf{t}, \widehat{\alpha}, \widehat{\beta}) \mathrm{d} \mathbf{w}
+    \end{equation}
+
+    where $(\widehat{\alpha}, \widehat{\beta})$ is the mode of $p(\alpha, \beta \mid \mathbf{t})$, which is assumed to be sharply peaked; a.k.a. \textit{empirical Bayes}, \textit{type II} or \textit{generalized maximum likelihood}, or \textit{evidence approximation}
+    
+\end{frame}
+\begin{frame}
+    \frametitle{The Evidence Approximation(2)}
+    From Bayes' theorem we have
+    \begin{equation}
+        p(\alpha, \beta \mid \mathbf{t}) \propto p(\mathbf{t} \mid \alpha, \beta) p(\alpha, \beta)
+    \end{equation}
+    and if we assume $ p(\alpha, \beta)$ to be flat we see that
+    \begin{equation}
+        \begin{aligned}
+            p(\alpha, \beta \mid \mathbf{t}) & \propto p(\mathbf{t} \mid \alpha, \beta)                                                     \\
+                                             & =\int p(\mathbf{t} \mid \mathbf{w}, \beta) p(\mathbf{w} \mid \alpha) \mathrm{d} \mathbf{w} .
+        \end{aligned}
+    \end{equation}
+    General results for Gaussian integrals give
+    \begin{equation}
+        \ln p(\mathbf{t} \mid \alpha, \beta)=\frac{M}{2} \ln \alpha+\frac{N}{2} \ln \beta-E\left(\mathbf{m}_{N}\right)+\frac{1}{2} \ln \left|\mathbf{S}_{N}\right|-\frac{N}{2} \ln (2 \pi)
+    \end{equation}
+\end{frame}
+%---------------------------------------------------------
+\end{document}
