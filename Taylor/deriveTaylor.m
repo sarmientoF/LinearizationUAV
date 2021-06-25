@@ -43,6 +43,7 @@ dxdt = expand(dxdt);
 x_0 = [zeros(1, 3), zeros(1, 3), zeros(1, 3), 1, zeros(1, 3), 9.81]';
 A = jacobian(dxdt, x);
 B = jacobian(dxdt, w);
+
 A = subs(A, x, x_0);
 B = subs(B, x, x_0);
 A = double(A);

@@ -53,7 +53,7 @@ classdef Parameters < handle
         end
 
         function setInitialStates(this, phi)
-            this.p_0 = 20*[0;0.2;0.3]; %Position
+            this.p_0 = 10*[0;0.2;0.3]; %Position
             this.v_0 = 0*[0.5;0;0.2]; %Velocity
 
             this.epsilon_0 = [0;0;sind(phi)]; %Euler parametes

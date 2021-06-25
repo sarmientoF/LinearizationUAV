@@ -35,6 +35,12 @@ params = Parameters(20);
 
 z_d = [zeros(1,3), zeros(1,3),zeros(1,3), 1, zeros(1,3), 9.81];
 y_d = [zeros(1,3), zeros(1,3),zeros(1,3), zeros(1,3), 9.81];
-
+x_d = [z_d, zeros(1, 4)];
 maxW = 10;
-sim("Taylor_Servo", 30)
+t_final = 30;
+outSim = sim("Taylor_Servo", t_final);
+X_w = [outSim.X_w];
+X_d = repmat(x_d, length(X_w), 1);
+t_span = linspace(0,t_final,length(X_w));
+
+plotOutputs(X_w, X_d, t_span, 'T_Servo_Dist')

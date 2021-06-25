@@ -1,7 +1,7 @@
 \documentclass{beamer}
 
 \usepackage{beamerthemesplit}
-\usepackage[orientation=landscape,size=custom,width=16,height=11,scale=0.4,debug]{beamerposter} 
+\usepackage[orientation=landscape,size=custom,width=17,height=11,scale=0.4,debug]{beamerposter} 
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{ulem}
@@ -137,20 +137,20 @@
     \frametitle{Expanded Model}
     \begin{equation}
         \dot{x}=\left(\begin{array}{c}
-                p_{1}        \\
-                p_{2}        \\
-                p_{3}        \\
-                v_{1}        \\
-                v_{2}        \\
-                v_{3}        \\
-                \epsilon_{1} \\
-                \epsilon_{2} \\
-                \epsilon_{3} \\
-                \eta         \\
-                \omega_{2}   \\
-                \omega_{3}   \\
-                \omega_{1}   \\
-                T
+                \dot{p_{1}}        \\
+                \dot{p_{2}}        \\
+                \dot{p_{3}}        \\
+                \dot{v_{1}}        \\
+                \dot{v_{2}}        \\
+                \dot{v_{3}}        \\
+                \dot{\epsilon_{1}} \\
+                \dot{\epsilon_{2}} \\
+                \dot{\epsilon_{3}} \\
+                \dot{\eta}         \\
+                \dot{\omega_{1}}   \\
+                \dot{\omega_{2}}   \\
+                \dot{\omega_{3}}   \\
+                \dot{T}
             \end{array}\right)=\left(\begin{array}{c}
                 v_{1}                                                                                                  \\
                 v_{2}                                                                                                  \\
@@ -445,6 +445,346 @@
 
 
 %---------------------------------------------------------
+
+
+\section{Taylor Linearization}
+\begin{frame}
+    \begin{equation*}
+        \dot{x}=\left(\begin{array}{c}
+                \dot{p_{1}}        \\
+                \dot{p_{2}}        \\
+                \dot{p_{3}}        \\
+                \dot{v_{1}}        \\
+                \dot{v_{2}}        \\
+                \dot{v_{3}}        \\
+                \dot{\epsilon_{1}} \\
+                \dot{\epsilon_{2}} \\
+                \dot{\epsilon_{3}} \\
+                \dot{\eta}         \\
+                \dot{\omega_{1}}   \\
+                \dot{\omega_{2}}   \\
+                \dot{\omega_{3}}   \\
+                \dot{T}
+            \end{array}\right)=\left(\begin{array}{c}
+                v_{1}                                                                                                  \\
+                v_{2}                                                                                                  \\
+                v_{3}                                                                                                  \\
+                T\left(2 \epsilon_{1} \epsilon_{3}+2 \epsilon_{2} \eta\right)                                          \\
+                T\left(2 \epsilon_{2} \epsilon_{3}-2 \epsilon_{1} \eta\right)                                          \\
+                9.81-T\left(2 \epsilon_{1}^{2}+2 \epsilon_{2}^{2}-1\right)                                             \\
+                \frac{\epsilon_{3} \omega_{2}}{2}-\frac{\epsilon_{2} \omega_{3}}{2}+\frac{\eta \omega_{1}}{2}          \\
+                \frac{\epsilon_{1} \omega_{3}}{2}-\frac{\epsilon_{3} \omega_{1}}{2}+\frac{\eta \omega_{2}}{2}          \\
+                \frac{\epsilon_{2} \omega_{1}}{2}-\frac{\epsilon_{1} \omega_{2}}{2}+\frac{\eta \omega_{3}}{2}          \\
+                -\frac{\epsilon_{1} \omega_{1}}{2}-\frac{\epsilon_{2} \omega_{2}}{2}-\frac{\epsilon_{3} \omega_{3}}{2} \\
+                w_{1,1}                                                                                                \\
+                w_{1,2}                                                                                                \\
+                w_{1,3}                                                                                                \\
+                w_{2}
+            \end{array}\right) = \left(\begin{array}{c}
+                0 \\
+                0 \\
+                0 \\
+                0 \\
+                0 \\
+                0 \\
+                0 \\
+                0 \\
+                0 \\
+                0 \\
+                0 \\
+                0 \\
+                0 \\
+                0
+            \end{array}\right)
+    \end{equation*}
+    this equilibrium state is reach when
+    $\boldsymbol{x}=\left[\begin{array}{llllllllllllll} 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 1  & 0  & 0  & 0  & 9.81 \end{array}\right]_{14 \times 1}^{T}$
+    So this model can be Linearized in the neighborhood
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Linearization}
+    Linearization of dynamic equation as $\dot{x}=A x+B u$, where
+    \begin{equation}
+        \begin{array}{l}
+            A(x, u)=\frac{\partial}{\partial x} f(x, u) \\
+            B(x, u)=\frac{\partial}{\partial u} f(x, u)
+        \end{array}
+    \end{equation}
+
+    \begin{equation*}
+        A = \left(\begin{array}{cccccccccccccc} 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0 & 0 & 0 & 2\,T\,\epsilon _{3} & 2\,T\,\eta  & 2\,T\,\epsilon _{1} & 2\,T\,\epsilon _{2} & 0 & 0 & 0 & 2\,\epsilon _{1}\,\epsilon _{3}+2\,\epsilon _{2}\,\eta \\ 0 & 0 & 0 & 0 & 0 & 0 & -2\,T\,\eta  & 2\,T\,\epsilon _{3} & 2\,T\,\epsilon _{2} & -2\,T\,\epsilon _{1} & 0 & 0 & 0 & 2\,\epsilon _{2}\,\epsilon _{3}-2\,\epsilon _{1}\,\eta \\ 0 & 0 & 0 & 0 & 0 & 0 & -4\,T\,\epsilon _{1} & -4\,T\,\epsilon _{2} & 0 & 0 & 0 & 0 & 0 & -2\,{\epsilon _{1}}^2-2\,{\epsilon _{2}}^2+1\\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & -\frac{\omega _{3}}{2} & \frac{\omega _{2}}{2} & \frac{\omega _{1}}{2} & \frac{\eta }{2} & \frac{\epsilon _{3}}{2} & -\frac{\epsilon _{2}}{2} & 0\\ 0 & 0 & 0 & 0 & 0 & 0 & \frac{\omega _{3}}{2} & 0 & -\frac{\omega _{1}}{2} & \frac{\omega _{2}}{2} & -\frac{\epsilon _{3}}{2} & \frac{\eta }{2} & \frac{\epsilon _{1}}{2} & 0\\ 0 & 0 & 0 & 0 & 0 & 0 & -\frac{\omega _{2}}{2} & \frac{\omega _{1}}{2} & 0 & \frac{\omega _{3}}{2} & \frac{\epsilon _{2}}{2} & -\frac{\epsilon _{1}}{2} & \frac{\eta }{2} & 0\\ 0 & 0 & 0 & 0 & 0 & 0 & -\frac{\omega _{1}}{2} & -\frac{\omega _{2}}{2} & -\frac{\omega _{3}}{2} & 0 & -\frac{\epsilon _{1}}{2} & -\frac{\epsilon _{2}}{2} & -\frac{\epsilon _{3}}{2} & 0\\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \end{array}\right)
+    \end{equation*}
+
+\end{frame}
+\begin{frame}
+    \begin{equation*}
+        B = \left(\begin{array}{cccc} 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0\\ 1 & 0 & 0 & 0\\ 0 & 1 & 0 & 0\\ 0 & 0 & 1 & 0\\ 0 & 0 & 0 & 1 \end{array}\right)
+    \end{equation*}
+\end{frame}
+
+\begin{frame}
+    The rank of the controllability matrix is smaller than the number of states, so I had to remove the uncontrollable states. In this case, only one state was removed, $\eta$
+
+\end{frame}
+\subsection{LQR controller}
+\begin{frame}
+
+    Constant disturbance $\left(F_{d i s}=[2.50,1.25,2.00]^{T}\right)$ was added to the translational dynamics $(\dot{\boldsymbol{v}})$. The following figures show the outputs:
+\end{frame}
+\begin{frame}
+    \frametitle{Postion}
+
+    \begin{columns}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Postion_T_LQR.jpg}
+            \caption{Postion without disturbance}
+        \end{figure}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Postion_T_LQR_Dist.jpg}
+            \caption{Postion with disturbance}
+        \end{figure}
+    \end{columns}
+\end{frame}
+\begin{frame}
+    \frametitle{Velocity}
+
+    \begin{columns}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Velocity_T_LQR.jpg}
+            \caption{Velocity without disturbance}
+        \end{figure}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Velocity_T_LQR_Dist.jpg}
+            \caption{Velocity with disturbance}
+        \end{figure}
+    \end{columns}
+\end{frame}
+\begin{frame}
+    \frametitle{Euler}
+
+    \begin{columns}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Euler_T_LQR.jpg}
+            \caption{Euler without disturbance}
+        \end{figure}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Euler_T_LQR_Dist.jpg}
+            \caption{Euler with disturbance}
+        \end{figure}
+    \end{columns}
+\end{frame}
+\begin{frame}
+    \frametitle{Angular Velocity}
+
+
+    \begin{columns}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Angular_Velociy_T_LQR_Dist.jpg}
+            \caption{Angular Velocity without disturbance}
+        \end{figure}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Angular_Velociy_T_LQR_Dist.jpg}
+            \caption{Angular Velocity with disturbance}
+        \end{figure}
+    \end{columns}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Thrust}
+
+    \begin{columns}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Thrust_T_LQR.jpg}
+            \caption{Thrust without disturbance}
+        \end{figure}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Thrust_T_LQR_Dist.jpg}
+            \caption{Thrust with disturbance}
+        \end{figure}
+    \end{columns}
+\end{frame}
+\begin{frame}
+    \frametitle{Inputs}
+
+    \begin{columns}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Inputs_T_LQR.jpg}
+            \caption{Inputs without disturbance}
+        \end{figure}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Inputs_T_LQR_Dist.jpg}
+            \caption{Inputs with disturbance}
+        \end{figure}
+    \end{columns}
+\end{frame}
+
+\subsection{Servo controller}
+\begin{frame}
+
+    Constant disturbance $\left(F_{d i s}=[2.50,1.25,2.00]^{T}\right)$ was added to the translational dynamics $(\dot{\boldsymbol{v}})$. The following figures show the outputs:
+\end{frame}
+\begin{frame}
+    \frametitle{Postion}
+
+    \begin{columns}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Postion_T_Servo.jpg}
+            \caption{Postion without disturbance}
+        \end{figure}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Postion_T_Servo_Dist.jpg}
+            \caption{Postion with disturbance}
+        \end{figure}
+    \end{columns}
+\end{frame}
+\begin{frame}
+    \frametitle{Velocity}
+
+    \begin{columns}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Velocity_T_Servo.jpg}
+            \caption{Velocity without disturbance}
+        \end{figure}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Velocity_T_Servo_Dist.jpg}
+            \caption{Velocity with disturbance}
+        \end{figure}
+    \end{columns}
+\end{frame}
+\begin{frame}
+    \frametitle{Euler}
+
+    \begin{columns}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Euler_T_Servo.jpg}
+            \caption{Euler without disturbance}
+        \end{figure}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Euler_T_Servo_Dist.jpg}
+            \caption{Euler with disturbance}
+        \end{figure}
+    \end{columns}
+\end{frame}
+\begin{frame}
+    \frametitle{Angular Velocity}
+
+
+    \begin{columns}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Angular_Velociy_T_Servo.jpg}
+            \caption{Angular Velocity without disturbance}
+        \end{figure}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Angular_Velociy_T_Servo_Dist.jpg}
+            \caption{Angular Velocity with disturbance}
+        \end{figure}
+    \end{columns}
+
+\end{frame}
+\begin{frame}
+    \frametitle{Thrust}
+
+    \begin{columns}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Thrust_T_Servo.jpg}
+            \caption{Thrust without disturbance}
+        \end{figure}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Thrust_T_Servo_Dist.jpg}
+            \caption{Thrust with disturbance}
+        \end{figure}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Inputs}
+
+    \begin{columns}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Inputs_T_Servo.jpg}
+            \caption{Inputs without disturbance}
+        \end{figure}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{Inputs_T_Servo_Dist.jpg}
+            \caption{Inputs with disturbance}
+        \end{figure}
+    \end{columns}
+\end{frame}
 
 
 \end{document}

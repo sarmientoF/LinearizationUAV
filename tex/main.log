@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.6.28)  9 JUN 2021 16:02
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.6.28)  25 JUN 2021 15:53
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -566,7 +566,7 @@ Package beamerposter Info: finished orientation check. on input line 130.
 Package beamerposter Info: checking size input, please wait. on input line 130.
 Package beamerposter Info: the input custom\ 6\ was correct, we proceed. on input line 130.
 Package beamerposter Info: finished size input check. on input line 130.
-Package beamerposter Info: custom poster width=16 on input line 130.
+Package beamerposter Info: custom poster width=17 on input line 130.
 Package beamerposter Info: custom poster height=11 on input line 130.
 Package beamerposter Info: myfontscale=0.4 on input line 130.
 Package beamerposter Info: enabled debug mode on input line 130.
@@ -590,11 +590,11 @@ FP debug: upn: +++ computing upn-expression "1 customwidth -"
 FP debug: upn: calculating "1"
 FP debug: upn: result      "1"
 FP debug: upn: calculating "customwidth"
-FP debug: upn: result      "16"
-FP debug: upn: calculating "16 sub 1"
+FP debug: upn: result      "17"
+FP debug: upn: calculating "17 sub 1"
 ( FP-SUB )
-FP debug: upn: result      "15.000000000000000000"
-FP debug: upn: +++ result of upn-expression is "(15.000000000000000000)"
+FP debug: upn: result      "16.000000000000000000"
+FP debug: upn: +++ result of upn-expression is "(16.000000000000000000)"
 ) ( FP-UPN
 FP debug: upn: +++ computing upn-expression "1 customheight -"
 FP debug: upn: calculating "1"
@@ -606,8 +606,8 @@ FP debug: upn: calculating "11 sub 1"
 FP debug: upn: result      "10.000000000000000000"
 FP debug: upn: +++ result of upn-expression is "(10.000000000000000000)"
 )
-Package beamerposter Info: paperwidth=455.24408pt, paperheight=312.9803pt on input line 173.
-Package beamerposter Info: textwidth=426.79134pt, textheight=284.52756pt on input line 174.
+Package beamerposter Info: paperwidth=483.69684pt, paperheight=312.9803pt on input line 173.
+Package beamerposter Info: textwidth=455.24408pt, textheight=284.52756pt on input line 174.
 Package beamerposter Info: fontscale=1.0, myfontscale=0.40 on input line 175.
  ( FP-UPN
 FP debug: upn: +++ computing upn-expression "myfontscale fontSizeX * 2 round"
@@ -1497,11 +1497,11 @@ LaTeX Font Info:    ... okay on input line 64.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(10.95pt, 433.34409pt, 10.95pt)
+* h-part:(L,W,R)=(10.95pt, 461.79684pt, 10.95pt)
 * v-part:(T,H,B)=(0.0pt, 312.9803pt, 0.0pt)
-* \paperwidth=455.24408pt
+* \paperwidth=483.69684pt
 * \paperheight=312.9803pt
-* \textwidth=433.34409pt
+* \textwidth=461.79684pt
 * \textheight=284.52757pt
 * \oddsidemargin=-61.31999pt
 * \evensidemargin=-61.31999pt
@@ -1701,6 +1701,104 @@ File: ../img/Gamma.png Graphic file (type bmp)
 <../img/Gamma.png>
  [15
 
+] (./main.toc) [16
+
+] [17
+
+] [18
+
+] [19
+
+] [20
+
+] [21
+
+]
+File: ../img/Postion_T_LQR.jpg Graphic file (type bmp)
+<../img/Postion_T_LQR.jpg>
+File: ../img/Postion_T_LQR_Dist.jpg Graphic file (type bmp)
+<../img/Postion_T_LQR_Dist.jpg>
+ [22
+
+]
+File: ../img/Velocity_T_LQR.jpg Graphic file (type bmp)
+<../img/Velocity_T_LQR.jpg>
+File: ../img/Velocity_T_LQR_Dist.jpg Graphic file (type bmp)
+<../img/Velocity_T_LQR_Dist.jpg>
+ [23
+
+]
+File: ../img/Euler_T_LQR.jpg Graphic file (type bmp)
+<../img/Euler_T_LQR.jpg>
+File: ../img/Euler_T_LQR_Dist.jpg Graphic file (type bmp)
+<../img/Euler_T_LQR_Dist.jpg>
+ [24
+
+]
+File: ../img/Angular_Velociy_T_LQR_Dist.jpg Graphic file (type bmp)
+<../img/Angular_Velociy_T_LQR_Dist.jpg>
+File: ../img/Angular_Velociy_T_LQR_Dist.jpg Graphic file (type bmp)
+<../img/Angular_Velociy_T_LQR_Dist.jpg>
+ [25
+
+]
+File: ../img/Thrust_T_LQR.jpg Graphic file (type bmp)
+<../img/Thrust_T_LQR.jpg>
+File: ../img/Thrust_T_LQR_Dist.jpg Graphic file (type bmp)
+<../img/Thrust_T_LQR_Dist.jpg>
+ [26
+
+]
+File: ../img/Inputs_T_LQR.jpg Graphic file (type bmp)
+<../img/Inputs_T_LQR.jpg>
+File: ../img/Inputs_T_LQR_Dist.jpg Graphic file (type bmp)
+<../img/Inputs_T_LQR_Dist.jpg>
+ [27
+
+] [28
+
+]
+File: ../img/Postion_T_Servo.jpg Graphic file (type bmp)
+<../img/Postion_T_Servo.jpg>
+File: ../img/Postion_T_Servo_Dist.jpg Graphic file (type bmp)
+<../img/Postion_T_Servo_Dist.jpg>
+ [29
+
+]
+File: ../img/Velocity_T_Servo.jpg Graphic file (type bmp)
+<../img/Velocity_T_Servo.jpg>
+File: ../img/Velocity_T_Servo_Dist.jpg Graphic file (type bmp)
+<../img/Velocity_T_Servo_Dist.jpg>
+ [30
+
+]
+File: ../img/Euler_T_Servo.jpg Graphic file (type bmp)
+<../img/Euler_T_Servo.jpg>
+File: ../img/Euler_T_Servo_Dist.jpg Graphic file (type bmp)
+<../img/Euler_T_Servo_Dist.jpg>
+ [31
+
+]
+File: ../img/Angular_Velociy_T_Servo.jpg Graphic file (type bmp)
+<../img/Angular_Velociy_T_Servo.jpg>
+File: ../img/Angular_Velociy_T_Servo_Dist.jpg Graphic file (type bmp)
+<../img/Angular_Velociy_T_Servo_Dist.jpg>
+ [32
+
+]
+File: ../img/Thrust_T_Servo.jpg Graphic file (type bmp)
+<../img/Thrust_T_Servo.jpg>
+File: ../img/Thrust_T_Servo_Dist.jpg Graphic file (type bmp)
+<../img/Thrust_T_Servo_Dist.jpg>
+ [33
+
+]
+File: ../img/Inputs_T_Servo.jpg Graphic file (type bmp)
+<../img/Inputs_T_Servo.jpg>
+File: ../img/Inputs_T_Servo_Dist.jpg Graphic file (type bmp)
+<../img/Inputs_T_Servo_Dist.jpg>
+ [34
+
 ]
 \tf@nav=\write8
 \openout8 = `main.nav'.
@@ -1711,13 +1809,13 @@ File: ../img/Gamma.png Graphic file (type bmp)
 \tf@snm=\write10
 \openout10 = `main.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 450.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 450.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 790.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 790.
  (./main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 450.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 450.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 790.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 790.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B0AC68FEF284742B98377B6A697D5809;223.
+(rerunfilecheck)             Checksum: F0862A94038A4D53972A2AB76B6453D1;417.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1726,12 +1824,12 @@ runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 26234 strings out of 479418
- 484289 string characters out of 5884585
- 819430 words of memory out of 5000000
- 43087 multiletter control sequences out of 15000+600000
+ 26420 strings out of 479418
+ 488521 string characters out of 5884585
+ 831371 words of memory out of 5000000
+ 43248 multiletter control sequences out of 15000+600000
  544182 words of font info for 98 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 58i,19n,73p,844b,739s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,19n,73p,1743b,739s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.xdv (15 pages, 446960 bytes).
+Output written on main.xdv (34 pages, 994248 bytes).
